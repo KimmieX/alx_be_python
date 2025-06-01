@@ -15,6 +15,6 @@ if __name__ == "__main__":
     row = 0
     while row < size:
         for col in range(size):
-            print("*", end="")
+            print("*", end="", flush=True)
         print()  # Print a newline after each row
         row += 1
