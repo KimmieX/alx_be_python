@@ -16,7 +16,7 @@ def daily_reminder():
                 continue  # Restart the loop for valid input
 
         if time_bound == "yes":
-            reminder += " This requires immediate attention today!"
+            reminder += " That requires immediate attention today!"
 
         print(reminder)
         break  # Exit loop once valid input is received
