@@ -37,3 +37,5 @@ if __name__ == "__main__":
             print("*", end="")
         print()  # Print a newline after each row
         row += 1
+
+size_str = input("Enter the size of the pattern: ")
