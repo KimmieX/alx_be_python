@@ -12,7 +12,7 @@ def daily_reminder():
             case "low":
                 reminder = f"Note: '{task}' is a LOW priority task. Consider completing it when you have free time."
             case _:
-                print("Invalid priority. Please enter high, medium, or low.")
+                print("Invalid priority. Please enter high, medium, or low to provide a customized reminder")
                 continue  # Restart the loop for valid input
 
         if time_bound == "yes":
