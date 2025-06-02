@@ -18,9 +18,9 @@ if __name__ == "__main__":
 
     reminder = f"Note: '{task}' {priority_message}"
 
-    if time_bound:
-        reminder = f"Reminder: '{task}' {priority_message} that requires immediate attention today!"
-    elif priority == 'low':
-        pass # The low priority message is already included
+   if time_bound:
+    reminder = f"Reminder: '{task}' {priority_message} that requires immediate attention today!"
+elif priority == 'low':
+    pass # The low priority message is already included
 
     print("\n" + reminder)
