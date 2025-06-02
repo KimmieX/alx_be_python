@@ -1,7 +1,7 @@
 def daily_reminder():
     while True:
         task = input("Enter your task: ")
-        priority = input("Priority (high/medium/low): ").lower()
+        priority = input("Priority (high/medium/low):  Provide a Customized Reminder").lower()
         time_bound = input("Is it time-bound? (yes/no): ").lower()
 
         match priority:
