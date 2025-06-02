@@ -6,7 +6,7 @@ def daily_reminder():
 
         match priority:
             case "high":
-                reminder = f"Reminder: '{task}' is a HIGH priority task."
+                reminder = f"Reminder: '{task}' is a HIGH priority task that requires immediate attention today!"
             case "medium":
                 reminder = f"Reminder: '{task}' is a MEDIUM priority task."
             case "low":
