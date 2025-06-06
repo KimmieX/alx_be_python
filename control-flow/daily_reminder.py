@@ -1,43 +1,38 @@
-def daily_reminder():
-    """
-    Prompts the user for a task, its priority, and whether it's time-bound,
-    then generates and prints a customized reminder.
-    Ensures all inputs are valid before generating the reminder.
-    """
+def daily_reminder_improved():
     while True:
-        # --- Check 1: User Prompts ---
-        # Checks for user prompts: Task, Time Bound, Priority
-        task = input("Enter your task: ").strip() # .strip() to remove leading/trailing whitespace
+        task = input("Enter your task: ")
+        priority = input("Priority (high/medium/low): ").lower()
+        time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-        # Validate task input
-        if not task:
-            print("Task cannot be empty. Please enter a valid task.")
-            continue
+        reminder_parts = []
+        requires_immediate_action = False
 
-        priority = input("Priority (high/medium/low): ").lower().strip()
+        if priority == "high":
+            reminder_parts.append(f"Reminder: '{task}' is a HIGH priority task.")
+            requires_immediate_action = True # High priority inherently requires immediate action
+        elif priority == "medium":
+            reminder_parts.append(f"Reminder: '{task}' is a MEDIUM priority task.")
+        elif priority == "low":
+            reminder_parts.append(f"Note: '{task}' is a LOW priority task. Consider completing it when you have free time.")
+        else:
+            print("Invalid priority. Please enter high, medium, or low to provide a customized reminder")
+            continue  # Restart the loop for valid input
 
-        # Validate priority input using a match statement
-        # --- Check 2: Match Case statement reaction implementation ---
-        match priority:
-            case "high":
-                base_reminder = f"Reminder: '{task}' is a HIGH priority task."
-                requires_immediate_attention = True
-            case "medium":
-                base_reminder = f"Reminder: '{task}' is a MEDIUM priority task."
-                requires_immediate_attention = False
-            case "low":
-                base_reminder = f"Note: '{task}' is a LOW priority task. Consider completing it when you have free time."
-                requires_immediate_attention = False # Low priority doesn't require immediate attention by default
-            case _:
-                print("Invalid priority. Please enter 'high', 'medium', or 'low' to provide a customized reminder.")
-                continue  # Restart the loop for valid input
+        if time_bound == "yes":
+            # If it's time-bound, it definitely requires immediate action
+            requires_immediate_action = True
 
-        time_bound_input = input("Is it time-bound? (yes/no): ").lower().strip()
+        if requires_immediate_action:
+            if priority == "high":
+                # For high priority, we've already stated it's high priority. Just add the time-bound specific part.
+                reminder_parts.append("It requires immediate attention today due to its high priority and time sensitivity!")
+            elif time_bound == "yes":
+                # For medium/low priority, if it's time-bound, add a specific time-sensitive phrase.
+                reminder_parts.append("This task is time-bound and requires immediate attention today!")
 
-        # Validate time_bound input
-        if time_bound_input not in ["yes", "no"]:
-            print("Invalid input for 'time-bound'. Please enter 'yes' or 'no'.")
-            continue
+        # Join the parts to form the final reminder
+        final_reminder = " ".join(reminder_parts)
+        print(final_reminder)
+        break
 
-        # --- Check 3: Use of if statement to modify the reminder if the task is time-bound ---
-        # If
+# daily_reminder_improved() # Uncomment to test the improved version
