@@ -1,5 +1,5 @@
 
-def main():
+def performed_operations():
     print("Arithmetic Operations")
     num1 = float(input("Enter the first number: "))
     num2 = float(input("Enter the second number: "))
