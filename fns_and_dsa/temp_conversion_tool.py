@@ -19,11 +19,11 @@ def main():
         if unit == 'F':
             # Convert from Fahrenheit to Celsius
             celsius = convert_to_celsius(temperature)
-            print(f"{temperature}°F is {celsius}°C")
+            print(f"{temperature}°F is {celsius:.2f}°C")
         elif unit == 'C':
             # Convert from Celsius to Fahrenheit
             fahrenheit = convert_to_fahrenheit(temperature)
-            print(f"{temperature}°C is {fahrenheit}°F")
+            print(f"{temperature}°C is {fahrenheit:.2f}°F")
         else:
             print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
     except ValueError:
